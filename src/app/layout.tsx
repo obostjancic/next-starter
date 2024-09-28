@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
+
+import AppNavbar from "@/components/app-navbar";
+import Providers from "@/components/providers";
 
 import "./globals.css";
 
@@ -14,8 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="h-screen w-screen">
+        <Providers>
+          <AppNavbar />
+
+          <main className="flex-grow">
+            <Suspense>{children}</Suspense>
+          </main>
+        </Providers>
+      </body>
     </html>
   );
 }
