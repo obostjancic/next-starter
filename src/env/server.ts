@@ -23,7 +23,7 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().optional(),
   },
   emptyStringAsUndefined: true,
+  // @ts-expect-error deal with this later
   // eslint-disable-next-line n/no-process-env
-  // @ts-expect-error
   experimental__runtimeEnv: process.env,
 });
