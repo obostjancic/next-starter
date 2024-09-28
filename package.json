@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "migrate": "npx drizzle-kit migrate",
+    "start": "npm run migrate && next start",
     "lint": "next lint",
     "format": "prettier src/ --write",
     "test": "vitest",
