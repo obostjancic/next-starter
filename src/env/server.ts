@@ -19,7 +19,11 @@ export const env = createEnv({
     DB_NAME: z.string(),
     DATABASE_URL: z.string().url(),
   },
+  client: {
+    NEXT_PUBLIC_APP_URL: z.string().optional(),
+  },
   emptyStringAsUndefined: true,
   // eslint-disable-next-line n/no-process-env
+  // @ts-expect-error
   experimental__runtimeEnv: process.env,
 });
