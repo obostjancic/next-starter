@@ -1,6 +1,9 @@
 import { Button, Card, CardBody } from "@nextui-org/react";
 
+import { sleep } from "@/utils/sleep";
+
 export default async function Home() {
+  await sleep(0);
   return (
     <Card>
       <CardBody>
