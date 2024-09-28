@@ -1,7 +1,3 @@
 {
-  "build": {
-    "commands": {
-      "build": "npm run migrate && next build"
-    }
-  }
+  "buildCommand": "npm run migrate && next build"
 }
